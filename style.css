@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    padding: 15px 0px;
+    text-align: center;
+  }
+  
+  .grid-container {
+    background: #313131;
+    display: grid;
+    grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(auto, auto);
+  }
+  .grid-container header {
+    background: black;
+    color: white;
+    grid-area: h;
+  }
+  .grid-container main {
+    background: #5a5a5a;
+    grid-area: m;
+  }
+  .grid-container footer {
+    background: #313131;
+    color: #f1f1f1;
+    grid-area: f;
+  }
+  .grid-container footer #f1 {
+    background: blue;
+  }
+  .grid-container footer #f2 {
+    background: orange;
+  }
+  .grid-container footer #f3 {
+    background: red;
+  }
+  .grid-container footer #f4 {
+    background: purple;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .flex-container #s1 {
+    color: white;
+    background: blue;
+  }
+  .flex-container #s2 {
+    color: white;
+    background: orange;
+  }
+  .flex-container #s3 {
+    color: white;
+    background: red;
+  }
+  .flex-container #s4 {
+    color: white;
+    background: purple;
+  }
+  .flex-container .flex-item {
+    align-items: center;
+    background: #f1f1f1;
+    display: flex;
+    flex-basis: 100px;
+    padding: 35px;
+  }
+  .flex-container .flex-item p {
+    text-align: justify;
+  }
+  
+  @media (min-width: 700px) {
+    .flex-container {
+      align-items: space-around;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: space-around;
+    }
+    .flex-container .flex-item {
+      flex-basis: calc(50% - 5px);
+    }
+  }
+  @media (min-width: 1200px) {
+    .flex-container {
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .flex-container .flex-item {
+      flex-basis: calc(25% - 5px);
+    }
+  }

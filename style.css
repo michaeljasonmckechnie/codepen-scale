@@ -1,100 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    padding: 15px 0px;
-    text-align: center;
-  }
-  
-  .grid-container {
-    background: #313131;
-    display: grid;
-    grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(auto, auto);
-  }
-  .grid-container header {
-    background: black;
-    color: white;
-    grid-area: h;
-  }
-  .grid-container main {
-    background: #5a5a5a;
-    grid-area: m;
-  }
-  .grid-container footer {
-    background: #313131;
-    color: #f1f1f1;
-    grid-area: f;
-  }
-  .grid-container footer #f1 {
-    background: blue;
-  }
-  .grid-container footer #f2 {
-    background: orange;
-  }
-  .grid-container footer #f3 {
-    background: red;
-  }
-  .grid-container footer #f4 {
-    background: purple;
-  }
-  
+  box-sizing: border-box;
+  color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.grid-container {
+  background: #313131;
+  display: grid;
+  grid-template-areas: "h h h h h h h h h h h h" "n n n n n n n n n n n n" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(auto, auto);
+}
+.grid-container header {
+  grid-area: h;
+}
+.grid-container header #main-heading {
+  background: #1a1a1a;
+  color: #ff6600;
+  font-family: "Otomanopee One";
+  text-shadow: 0px 2px 0px #50f;
+}
+.grid-container nav {
+  display: block;
+  grid-area: n;
+  position: sticky;
+  top: 0px;
+}
+.grid-container nav ul {
+  align-items: center;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.grid-container nav li {
+  display: flex;
+}
+.grid-container nav a {
+  text-decoration: none;
+}
+.grid-container nav button {
+  background: #1a1a1a;
+  border-radius: unset;
+  border: none;
+  color: #ff6600;
+  cursor: pointer;
+  font-family: "Anton";
+  padding: 10px 20px;
+}
+.grid-container nav button:hover {
+  background: #ff6600;
+  color: #1a1a1a;
+}
+.grid-container main {
+  background: #2a2a2a;
+  color: #3a3a3a;
+  grid-area: m;
+}
+.grid-container section {
+  padding: 15px;
+}
+.grid-container footer {
+  background: #1a1a1a;
+  color: #f1f1f1;
+  grid-area: f;
+  padding: 15px;
+}
+.grid-container footer #f1 {
+  background: blue;
+}
+.grid-container footer #f2 {
+  background: orange;
+}
+.grid-container footer #f3 {
+  background: red;
+}
+.grid-container footer #f4 {
+  background: purple;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.flex-container #a1 {
+  background: purple;
+  color: black;
+  flex-grow: 1;
+}
+.flex-container #a2 {
+  background: limegreen;
+  color: black;
+  flex-grow: 4;
+}
+.flex-container #s1 {
+  color: white;
+  background: blue;
+}
+.flex-container #s2 {
+  color: white;
+  background: orange;
+}
+.flex-container #s3 {
+  color: white;
+  background: red;
+}
+.flex-container #s4 {
+  color: white;
+  background: purple;
+}
+.flex-container .flex-item {
+  align-items: center;
+  background: #f1f1f1;
+  display: flex;
+  flex-basis: 100px;
+  padding: 35px;
+}
+.flex-container .flex-item p {
+  text-align: justify;
+}
+
+@media (min-width: 700px) {
   .flex-container {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-  }
-  .flex-container #s1 {
-    color: white;
-    background: blue;
-  }
-  .flex-container #s2 {
-    color: white;
-    background: orange;
-  }
-  .flex-container #s3 {
-    color: white;
-    background: red;
-  }
-  .flex-container #s4 {
-    color: white;
-    background: purple;
+    gap: 5px;
+    justify-content: space-around;
   }
   .flex-container .flex-item {
-    align-items: center;
-    background: #f1f1f1;
-    display: flex;
-    flex-basis: 100px;
-    padding: 35px;
+    border-radius: 15px;
+    flex-basis: calc(50% - 5px);
   }
-  .flex-container .flex-item p {
-    text-align: justify;
+}
+@media (min-width: 1200px) {
+  .flex-container {
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
-  
-  @media (min-width: 700px) {
-    .flex-container {
-      align-items: space-around;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 5px;
-      justify-content: space-around;
-    }
-    .flex-container .flex-item {
-      flex-basis: calc(50% - 5px);
-    }
+  .flex-container .flex-item {
+    flex-basis: calc(25% - 5px);
   }
-  @media (min-width: 1200px) {
-    .flex-container {
-      align-items: stretch;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    .flex-container .flex-item {
-      flex-basis: calc(25% - 5px);
-    }
-  }
+}
